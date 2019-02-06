@@ -1,42 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace c0730263
+﻿
 {
-    
-       
-namespace peanut
+
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    namespace ConsoleApp1
     {
-        class ashu
+        class Program
         {
-            static int i = 0;
             static void Main(string[] args)
             {
-                MethodA();
-                Console.ReadLine();
-
+                LinkedList a = new LinkedList();
+                a.run();
+                a.WalkOverTheList();
             }
-
-            public static void MethodA()
+        }
+        class Dog
+        {
+            public static int NumberOfDogs = 0;
+            public Dog()
             {
-                while (Peanut())
+                // A constructor is Method
+                // that creates OBJECTS from a TYPE
+                Dog.NumberOfDogs++;
+            }
+            public String DogName;
+            public String DogBreed;
+            public Dog nextDog;
+        }
+        class LinkedList
+        {
+            public Dog current;
+            public Dog Head;
+            public Dog Peanut = new Dog();
+            public Dog Fifi = new Dog();
+            public Dog Jordan = new Dog();
+            public Dog Fido = new Dog();
+            public void run()
+            {
+                Head = Peanut;
+                Peanut.DogName = "Peanut";
+                Peanut.DogBreed = "Bichon";
+                Peanut.nextDog = Fifi;
+                Fifi.DogName = "Fifi";
+                Fifi.DogBreed = "Poodle";
+                Fifi.nextDog = Jordan;
+                Jordan.DogName = "Jordan";
+                Jordan.DogBreed = "Jerman Sheppard";
+                Jordan.nextDog = Fido;
+                Fido.DogName = "Fido";
+                Fido.DogBreed = "Beagle";
+                Fido.nextDog = null;
+            }
+            public void WalkOverTheList()
+            {
+                current = Head;
+                while (current != null)
                 {
-
-                    Console.WriteLine("i is {0}", i);
-
-                    if (i > 10)
-                    {
-                        return;
-                    }
+                    Console.WriteLine(current.DogName);
+                    current = current.nextDog;
                 }
-            }
-            public static bool Peanut()
-            {
-                i++;
-                return true;
             }
         }
     }
@@ -44,6 +70,7 @@ namespace peanut
 
 
 
+
 }
-    
+
 
