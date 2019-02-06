@@ -10,7 +10,7 @@ namespace c0730263
        
 namespace peanut
     {
-        class inder
+        class ashu
         {
             static int i = 0;
             static void Main(string[] args)
